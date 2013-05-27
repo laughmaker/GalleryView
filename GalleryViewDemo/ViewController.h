@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GalleryView.h"
 
 @interface ViewController : UIViewController
+@property (weak, nonatomic) IBOutlet GalleryView *gallerView;
 
 @end

@@ -18,6 +18,11 @@
 		25FCDE481753445B007C597E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 25FCDE471753445B007C597E /* Default-568h@2x.png */; };
 		25FCDE4B1753445B007C597E /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25FCDE491753445B007C597E /* MainStoryboard.storyboard */; };
 		25FCDE4E1753445B007C597E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25FCDE4D1753445B007C597E /* ViewController.m */; };
+		25FCDE591753447E007C597E /* GalleryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25FCDE561753447E007C597E /* GalleryView.m */; };
+		25FCDE5A1753447E007C597E /* ZoomScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 25FCDE581753447E007C597E /* ZoomScrollView.m */; };
+		25FCDE5E17534504007C597E /* 0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 25FCDE5B17534504007C597E /* 0.jpg */; };
+		25FCDE5F17534504007C597E /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 25FCDE5C17534504007C597E /* 1.jpg */; };
+		25FCDE6017534504007C597E /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 25FCDE5D17534504007C597E /* 2.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +42,13 @@
 		25FCDE4A1753445B007C597E /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		25FCDE4C1753445B007C597E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		25FCDE4D1753445B007C597E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		25FCDE551753447E007C597E /* GalleryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GalleryView.h; sourceTree = "<group>"; };
+		25FCDE561753447E007C597E /* GalleryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GalleryView.m; sourceTree = "<group>"; };
+		25FCDE571753447E007C597E /* ZoomScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZoomScrollView.h; sourceTree = "<group>"; };
+		25FCDE581753447E007C597E /* ZoomScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZoomScrollView.m; sourceTree = "<group>"; };
+		25FCDE5B17534504007C597E /* 0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0.jpg; sourceTree = "<group>"; };
+		25FCDE5C17534504007C597E /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		25FCDE5D17534504007C597E /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,7 @@
 		25FCDE251753445B007C597E = {
 			isa = PBXGroup;
 			children = (
+				25FCDE541753447E007C597E /* GalleryView */,
 				25FCDE371753445B007C597E /* GalleryViewDemo */,
 				25FCDE301753445B007C597E /* Frameworks */,
 				25FCDE2F1753445B007C597E /* Products */,
@@ -96,6 +109,9 @@
 		25FCDE381753445B007C597E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				25FCDE5B17534504007C597E /* 0.jpg */,
+				25FCDE5C17534504007C597E /* 1.jpg */,
+				25FCDE5D17534504007C597E /* 2.jpg */,
 				25FCDE391753445B007C597E /* GalleryViewDemo-Info.plist */,
 				25FCDE3A1753445B007C597E /* InfoPlist.strings */,
 				25FCDE3D1753445B007C597E /* main.m */,
@@ -105,6 +121,17 @@
 				25FCDE471753445B007C597E /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		25FCDE541753447E007C597E /* GalleryView */ = {
+			isa = PBXGroup;
+			children = (
+				25FCDE551753447E007C597E /* GalleryView.h */,
+				25FCDE561753447E007C597E /* GalleryView.m */,
+				25FCDE571753447E007C597E /* ZoomScrollView.h */,
+				25FCDE581753447E007C597E /* ZoomScrollView.m */,
+			);
+			path = GalleryView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,6 +190,9 @@
 				25FCDE461753445B007C597E /* Default@2x.png in Resources */,
 				25FCDE481753445B007C597E /* Default-568h@2x.png in Resources */,
 				25FCDE4B1753445B007C597E /* MainStoryboard.storyboard in Resources */,
+				25FCDE5E17534504007C597E /* 0.jpg in Resources */,
+				25FCDE5F17534504007C597E /* 1.jpg in Resources */,
+				25FCDE6017534504007C597E /* 2.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +206,8 @@
 				25FCDE3E1753445B007C597E /* main.m in Sources */,
 				25FCDE421753445B007C597E /* AppDelegate.m in Sources */,
 				25FCDE4E1753445B007C597E /* ViewController.m in Sources */,
+				25FCDE591753447E007C597E /* GalleryView.m in Sources */,
+				25FCDE5A1753447E007C597E /* ZoomScrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

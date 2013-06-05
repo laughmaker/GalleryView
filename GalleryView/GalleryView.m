@@ -60,9 +60,7 @@
     for (int i = 0; i < images.count; i++)
     {
         CGRect rect = CGRectMake(self.scrollView.frame.size.width * i, 0, self.scrollView.frame.size.width, self.scrollView.frame.size.height);
-        ZoomScrollView *zoomScrollView = [[ZoomScrollView alloc] initWithFrame:rect];
-        zoomScrollView.index = i;
-        zoomScrollView.imageView.image = [images objectAtIndex:i];
+        ZoomScrollView *zoomScrollView = [[ZoomScrollView alloc] initWithFrame:rect andImage:[images objectAtIndex:i] atIndex:i];
         [self.scrollView addSubview:zoomScrollView];
         
         UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTap:)];

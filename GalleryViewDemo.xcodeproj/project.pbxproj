@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2525E573175F2B8700F557EC /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2525E572175F2B8700F557EC /* 3.jpg */; };
 		25FCDE321753445B007C597E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25FCDE311753445B007C597E /* UIKit.framework */; };
 		25FCDE341753445B007C597E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25FCDE331753445B007C597E /* Foundation.framework */; };
 		25FCDE361753445B007C597E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25FCDE351753445B007C597E /* CoreGraphics.framework */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2525E572175F2B8700F557EC /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
 		25FCDE2E1753445B007C597E /* GalleryViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GalleryViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25FCDE311753445B007C597E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		25FCDE331753445B007C597E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -112,6 +114,7 @@
 				25FCDE5B17534504007C597E /* 0.jpg */,
 				25FCDE5C17534504007C597E /* 1.jpg */,
 				25FCDE5D17534504007C597E /* 2.jpg */,
+				2525E572175F2B8700F557EC /* 3.jpg */,
 				25FCDE391753445B007C597E /* GalleryViewDemo-Info.plist */,
 				25FCDE3A1753445B007C597E /* InfoPlist.strings */,
 				25FCDE3D1753445B007C597E /* main.m */,
@@ -193,6 +196,7 @@
 				25FCDE5E17534504007C597E /* 0.jpg in Resources */,
 				25FCDE5F17534504007C597E /* 1.jpg in Resources */,
 				25FCDE6017534504007C597E /* 2.jpg in Resources */,
+				2525E573175F2B8700F557EC /* 3.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,6 +334,7 @@
 				25FCDE531753445B007C597E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

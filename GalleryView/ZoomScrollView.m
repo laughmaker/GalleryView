@@ -8,28 +8,35 @@
 
 @interface ZoomScrollView ()
 @property (nonatomic, strong) UITapGestureRecognizer *doubleTapGesture;
+@property (nonatomic, strong) UIImageView   *imageView;
+@property (nonatomic, assign) NSInteger     index;
+@property (nonatomic, assign) BOOL          doubleTapped;
 
 @end
 
 @implementation ZoomScrollView
 
-
-- (id)initWithFrame:(CGRect)frame
+- (id)initWithFrame:(CGRect)frame andImage:(UIImage *)image atIndex:(NSInteger)index
 {
-    self = [super initWithFrame:frame];
+    self = [self initWithFrame:frame];
     if (self)
     {
-        self.delegate = self;
+        self.index = index;
+
         [self setMinimumZoomScale:1];
         [self setMaximumZoomScale:3];
         [self setZoomScale:1];
-
-        self.imageView = [[UIImageView alloc] initWithFrame:self.bounds];
-        self.imageView.userInteractionEnabled = YES;
+        [self setShowsHorizontalScrollIndicator:NO];
+        [self setShowsVerticalScrollIndicator:NO];
+        [self setDelegate:self];
+        
+        CGFloat height = frame.size.width / image.size.width * image.size.height;
+        self.imageView = [[UIImageView alloc] initWithImage:image];
+        [self.imageView setFrame:CGRectMake(0, (self.frame.size.height - height) / 2, self.frame.size.width, height)];
+        [self.imageView setUserInteractionEnabled:YES];
         [self addSubview:self.imageView];
         
-        self.doubleTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self
-                                                                                           action:@selector(handleDoubleTap:)];
+        self.doubleTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleDoubleTap:)];
         [self.doubleTapGesture setNumberOfTapsRequired:2];
         [self.imageView addGestureRecognizer:self.doubleTapGesture];
     }
@@ -41,8 +48,15 @@
 
 - (void)handleDoubleTap:(UIGestureRecognizer *)gesture
 {
-    float newScale = self.zoomScale * 1.5;
-    CGRect zoomRect = [self zoomRectForScale:newScale withCenter:[gesture locationInView:gesture.view]];
+    self.doubleTapped = !self.doubleTapped;
+
+    float newScale = 1;
+    if (self.doubleTapped)
+        newScale = self.zoomScale * 3;
+    else
+        newScale = 1;
+    CGPoint center = [gesture locationInView:gesture.view];
+    CGRect zoomRect = [self zoomRectForScale:newScale withCenter:center];
     [self zoomToRect:zoomRect animated:YES];
 }
 
@@ -56,6 +70,17 @@
     return zoomRect;
 }
 
+- (void)relayoutImageView
+{
+    CGPoint imageCenter = CGPointZero;
+    if (self.contentSize.height <= self.frame.size.height)
+        imageCenter = CGPointMake(self.contentSize.width/2, self.frame.size.height/2);
+    else
+        imageCenter = CGPointMake(self.contentSize.width/2, self.contentSize.height/2);
+    
+    [self.imageView setCenter:imageCenter];
+}
+
 
 #pragma mark - UIScrollViewDelegate
 
@@ -67,6 +92,13 @@
 - (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(float)scale
 {
     [scrollView setZoomScale:scale animated:NO];
+    
+    [self relayoutImageView];
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    [self relayoutImageView];
 }
 
 

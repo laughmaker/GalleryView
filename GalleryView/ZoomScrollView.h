@@ -8,8 +8,11 @@
 
 @interface ZoomScrollView : UIScrollView <UIScrollViewDelegate>
 
-@property (nonatomic, strong) UIImageView   *imageView;
-@property (nonatomic, assign) NSInteger     index;
+- (id)initWithFrame:(CGRect)frame andImage:(UIImage *)image atIndex:(NSInteger)index;
+
+@property (nonatomic, strong, readonly) UIImageView   *imageView;
+@property (nonatomic, assign, readonly) NSInteger     index;
+@property (nonatomic, assign, readonly) BOOL          doubleTapped;
 
 @property (nonatomic, strong, readonly) UITapGestureRecognizer *doubleTapGesture;
 

@@ -19,7 +19,7 @@
     [super viewDidLoad];
 
     NSMutableArray *images = [NSMutableArray arrayWithCapacity:3];
-    for (int i = 0; i < 3; i++)
+    for (int i = 0; i < 4; i++)
     {
         NSString *imageName = [NSString stringWithFormat:@"%d.jpg", i];
         UIImage *image = [UIImage imageNamed:imageName];
